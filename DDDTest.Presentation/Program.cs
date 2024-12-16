@@ -8,11 +8,6 @@ using DDDTest.Infrastructure.DependencyInjection;
 using DDDTest.Application.Queries.Products;
 
 var builder = WebApplication.CreateBuilder(args);
-
-
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
 // MediatR configuration
 builder.Services.AddMediatR(cfg => 
     cfg.RegisterServicesFromAssembly(typeof(GetAllCategoriesQuery).Assembly));
