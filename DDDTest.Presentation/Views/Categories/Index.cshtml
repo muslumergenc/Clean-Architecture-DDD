@@ -1,0 +1,38 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Categories</h1>
+<a href="/Categories/Create">Create New Category</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model!=null && Model.Any())
+        {
+            foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <td>
+                        <a href="/Categories/Edit/@category.Id">Edit</a> |
+                        <a href="/Categories/Delete/@category.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+    <tr>
+        <td>Kategori Bulunamadı</td>
+    </tr>
+        }
+
+</tbody>
+</table>

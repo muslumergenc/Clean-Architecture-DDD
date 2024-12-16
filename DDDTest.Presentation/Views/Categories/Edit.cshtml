@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Category
+
+<h1>Edit Category</h1>
+<form method="post">
+    <input type="hidden" id="id" name="id" value="@Model.Id" />
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="@Model.Name" />
+    <button type="submit">Save</button>
+</form>
